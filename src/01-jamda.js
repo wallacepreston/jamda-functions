@@ -1,9 +1,5 @@
 'use strict'
 
-// we curry your functions for you… for extra-hard mode, implement curry
-// yourself (or make all your functions curried to begin with)
-const { curry } = require('ramda')
-
 // prop :: (String, Object) -> *
 const prop = undefined
 
@@ -39,6 +35,10 @@ const uniqBy = undefined
 
 // pipe :: (...Functions) -> Function
 const pipe = undefined
+
+// We curry everything for you. For extra-hard mode, implement curry yourself.
+// http://ramdajs.com/docs/#curry
+const { curry } = require('ramda')
 
 module.exports = {
     prop: prop && curry(prop),
