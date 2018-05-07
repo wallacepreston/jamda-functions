@@ -175,6 +175,9 @@ describe('Jamda', () => {
             expect(resumeShoutingSomeWords('well', 'done')).to.equal(
                 '...WELL DONE!!!',
             )
+            expect(resumeShoutingSomeWords('the', 'pipe', 'works')).to.equal(
+                '...THE PIPE WORKS!!!',
+            )
         })
     })
 })
