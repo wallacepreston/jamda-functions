@@ -6,8 +6,7 @@ const J = require('./01-jamda')
 const data = require('./data')
 const using = require('./index')
 
-describe('listInstructorsWhoCanJoinRoadtrip (in index)', () => {
-
+describe('`listInstructorsWhoCanJoinRoadtrip` (in index)', () => {
     // this should pass already as it uses the real Ramda library
     describe('using Ramda', () => {
         it('gets the correct instructors in the proper format', () => {

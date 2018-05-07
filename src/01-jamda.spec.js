@@ -6,7 +6,7 @@ const J = require('./01-jamda')
 const id = a => a
 
 describe('Jamda', () => {
-    describe('prop', () => {
+    describe('`prop`', () => {
         it('retrieves a property from an object', () => {
             const obj = { color: 'blue', length: 17 }
             const length = J.prop('length', obj)
@@ -16,7 +16,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('equals', () => {
+    describe('`equals`', () => {
         it('tests if two items are equal', () => {
             expect(J.equals(3, 4)).to.be.false
             expect(J.equals(3, 3)).to.be.true
@@ -25,7 +25,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('gte', () => {
+    describe('`gte`', () => {
         it('tests if the first arg is greater or equal to second arg', () => {
             expect(J.gte(2, 3)).to.be.false
             expect(J.gte(3, 1)).to.be.true
@@ -33,7 +33,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('both', () => {
+    describe('`both`', () => {
         it('tests if both input functions return true for a final argument', () => {
             const isOdd = x => x % 2 !== 0
             const isPos = x => x >= 0
@@ -46,7 +46,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('flip', () => {
+    describe('`flip`', () => {
         it('takes a function and two arguments, and calls the function with the arguments in reverse order', () => {
             const append = (str1, str2) => str1 + str2
             expect(J.flip(append, 'Wow.', '...')).to.equal('...Wow.')
@@ -57,7 +57,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('map', () => {
+    describe('`map`', () => {
         it('maps arrays by the passed-in mapper func', () => {
             const baseArr = [1, 2, 3]
             const double = x => x * 2
@@ -69,7 +69,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('filter', () => {
+    describe('`filter`', () => {
         it('filters arrays by the passed-in predicate func', () => {
             const baseArr = [1, 2, 3]
             const isOdd = x => x % 2 !== 0
@@ -81,7 +81,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('sort', () => {
+    describe('`sort`', () => {
         it('creates a copy of an array, sorted by the passed-in comparator function', () => {
             const arr = [54, 213, 8, 1]
             const byFirstLetter = (a, b) => {
@@ -103,7 +103,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('descend', () => {
+    describe('`descend`', () => {
         it('builds a comparator function (returning -1, 0, or 1) which uses `<` on the results of a passed-in func', () => {
             const stone1 = { name: 'basalt', age: 913 }
             const stone2 = { name: 'pumice', age: 328 }
@@ -119,7 +119,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('pick', () => {
+    describe('`pick`', () => {
         it('copies objects only including specified properties', () => {
             const baseObj = {
                 age: 99,
@@ -139,7 +139,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('uniqBy', () => {
+    describe('`uniqBy`', () => {
         it('creates arrays only including the first occurrences of elements for which the passed-in matcher func returns unique values', () => {
             const greetings = ['hello', 'hi', 'yo', 'sup', 'heyo', 'salut']
             const firstLetter = s => s[0]
@@ -158,7 +158,7 @@ describe('Jamda', () => {
         })
     })
 
-    describe('pipe', () => {
+    describe('`pipe`', () => {
         it('composes functions left-to-right', () => {
             const concatWithSpace = (...strings) => strings.join(' ')
             const toUpper = s => s.toUpperCase()

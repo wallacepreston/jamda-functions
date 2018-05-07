@@ -2,7 +2,6 @@
 const R = require('ramda')
 
 const using = (f = R) => {
-
     /**
      * Example of using Ramda / Jamda to express data computation as a pipeline
      * of composed functions. Take a look here, then implement the individual
