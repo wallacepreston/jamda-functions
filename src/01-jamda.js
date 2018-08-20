@@ -24,7 +24,7 @@ const filter = undefined
 // sort :: (Function, Array) -> Array
 const sort = undefined
 
-// descend :: (Function, *, *) -> Boolean
+// descend :: (Function, *, *) -> Number
 const descend = undefined
 
 // pick :: ([String], Object) -> Object
