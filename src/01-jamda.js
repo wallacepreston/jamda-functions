@@ -1,25 +1,43 @@
 'use strict'
 
 // prop :: (String, Object) -> *
-const prop = undefined
+const prop = (key, obj) => {
+    return obj[key]
+}
 
 // equals :: (*, *) -> Boolean
-const equals = undefined
+const equals = (item1, item2) => {
+    return item1 === item2
+}
 
 // gte :: (Number, Number) -> Boolean
-const gte = undefined
+const gte = (arg1, arg2) => {
+    return arg1 >= arg2
+}
 
 // both :: (Function, Function, *) -> Boolean
-const both = undefined
+const both = (func1, func2, arg) => {
+    return func1(arg) && func2(arg)
+}
 
 // flip :: (Function, *, *) -> *
-const flip = undefined
+const flip = (funcToFlip, arg1, arg2) => {
+    return funcToFlip(arg2, arg1)
+}
 
 // map :: (Function, Array) -> Array
-const map = undefined
+const map = (func, arr) => {
+    return arr.map(elem => {
+        return func(elem)
+    })
+}
 
 // filter :: (Function, Array) -> Array
-const filter = undefined
+const filter = (func, arr) => {
+    return arr.filter(elem => {
+        return func(elem)
+    })
+}
 
 // sort :: (Function, Array) -> Array
 const sort = undefined
