@@ -120,7 +120,7 @@ describe('Jamda', () => {
     })
 
     describe('`pick`', () => {
-        xit('copies objects only including specified properties', () => {
+        it('copies objects only including specified properties', () => {
             const baseObj = {
                 age: 99,
                 type: null,
@@ -140,7 +140,7 @@ describe('Jamda', () => {
     })
 
     describe('`uniqBy`', () => {
-        xit('creates arrays only including the first occurrences of elements for which the passed-in matcher func returns unique values', () => {
+        it('creates arrays only including the first occurrences of elements for which the passed-in matcher func returns unique values', () => {
             const greetings = ['hello', 'hi', 'yo', 'sup', 'heyo', 'salut']
             const firstLetter = s => s[0]
             const length = s => s.length
@@ -159,7 +159,7 @@ describe('Jamda', () => {
     })
 
     describe('`pipe`', () => {
-        xit('composes functions left-to-right', () => {
+        it('composes functions left-to-right', () => {
             const concatWithSpace = (...strings) => strings.join(' ')
             const toUpper = s => s.toUpperCase()
             const yell = s => s + '!'

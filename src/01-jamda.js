@@ -40,16 +40,38 @@ const filter = (func, arr) => {
 }
 
 // sort :: (Function, Array) -> Array
-const sort = undefined
+const sort = (comparatorFunc, arrToSort) => {
+    const arrToReturn = arrToSort.slice(0);
+    return arrToReturn.sort(comparatorFunc)
+}
 
 // descend :: (Function, *, *) -> Number
-const descend = undefined
+const descend = (func, arg1, arg2) => {
+    const result1 = func(arg1)
+    const result2 = func(arg2)
+    if (result1 === result2) return 0
+    else if (result1 < result2) return 1
+    return -1
+    
+}
 
 // pick :: ([String], Object) -> Object
-const pick = undefined
+const pick = (arrOfStr, objToCopy) => {
+    // create new object newObj
+    //map over array
+    //set newObj at current element equal to objToCopy at current element
+    // return newObj
+    let newObj = {}
+    arrOfStr.map(str => {
+        newObj[str] = objToCopy[str]
+    })
+    return newObj
+}
 
 // uniqBy :: (Function, Array) -> Array
-const uniqBy = undefined
+const uniqBy = (func, arr) => {
+    
+}
 
 // pipe :: (...Functions) -> Function
 const pipe = undefined
