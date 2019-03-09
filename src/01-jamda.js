@@ -84,17 +84,17 @@ const uniqBy = (func, arr) => {
 }
 
 // pipe :: (...Functions) -> Function
-const pipe = (...funcs) => {
-    return (...args) => {
-
-        const restOfFuncs = funcs.slice(1)
+const pipe = (...funcs) => (
+    //return a function that can be called with any number of arguments, passing them through the first function, then the result is passed through all remaining functions, left-to-right
+    (...args) => {
+        // call the first function, with the arguments passed in
         const firstReturn = funcs[0](...args)
-        return restOfFuncs.reduce((accumulator, currFunc, idx) => {
-            const currReturn = currFunc(accumulator)
-            return currReturn
-        }, firstReturn)
+        // we only need all but the first function now
+        const restOfFuncs = funcs.slice(1)
+        // loop over the functions, and call each one, passing in the result of the previous function call. Start with the result of calling the first function with all the arguments passed in.
+        return restOfFuncs.reduce((accumulator, currFunc) => currFunc(accumulator), firstReturn)
     }
-}
+)
 
 // const concatWithSpace = (...strings) => strings.join(' ')
 // const toUpper = s => s.toUpperCase()
