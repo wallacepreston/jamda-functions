@@ -70,11 +70,53 @@ const pick = (arrOfStr, objToCopy) => {
 
 // uniqBy :: (Function, Array) -> Array
 const uniqBy = (func, arr) => {
-    
+    //pass through matcher func
+    //if whatever is returned is NOT in the array, the return is added to the array, and the item itself is added to another array
+    let returns = []
+    let arrToReturn = []
+    arr.map(elem => {
+        if (!returns.includes(func(elem))) {
+            returns.push(func(elem))
+            arrToReturn.push(elem)
+        }
+    })
+    return arrToReturn
 }
 
 // pipe :: (...Functions) -> Function
-const pipe = undefined
+const pipe = (...funcs) => {
+    return (...args) => {
+
+        const restOfFuncs = funcs.slice(1)
+        const firstReturn = funcs[0](...args)
+        return restOfFuncs.reduce((accumulator, currFunc, idx) => {
+            const currReturn = currFunc(accumulator)
+            return currReturn
+        }, firstReturn)
+    }
+}
+
+// const concatWithSpace = (...strings) => strings.join(' ')
+// const toUpper = s => s.toUpperCase()
+// const yell = s => s + '!'
+// const resume = s => '...' + s
+// const resumeShoutingSomeWords = pipe(
+//     concatWithSpace, // first func can take any number of args
+//     resume, // all other funcs are unary
+//     toUpper,
+//     yell,
+//     yell,
+//     yell,
+// )
+// resumeShoutingSomeWords('well', 'done')
+
+//example of pipe function
+// pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
+
+//map over the functions (using rest operator?)
+//run the first function, passing in the arguments (using rest operator?)
+//run the first function's return through the rest of the functions.
+
 
 // We curry everything for you. For extra-hard mode, implement curry yourself.
 // http://ramdajs.com/docs/#curry
